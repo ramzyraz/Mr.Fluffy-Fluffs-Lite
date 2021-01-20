@@ -1,5 +1,5 @@
-import { useState, useContext } from  'react';
 import api from './api';
+import { useState, useContext } from  'react';
 import { useHistory } from "react-router-dom";
 import UserContext from '../store/UserContext';
 
@@ -23,18 +23,21 @@ const Login = () => {
         e.preventDefault();
         try {
             const result = await api.post('/login', userLogin);
-            console.log(result.data.user);
+            console.log(result.data.user.name);
             loginDataAccessor.actions({
                 type: 'setState',
-                payload: true
-            })
+                payload: {
+                    loaded: true,
+                    name: result.data.user.name,
+                }
+            });
             history.push('/');
         }
         catch(err) {
             console.log(err.message)
         }
     } 
-
+       
     return ( 
         <form onSubmit={handleSubmit}>
             <h2>LOGIN</h2>

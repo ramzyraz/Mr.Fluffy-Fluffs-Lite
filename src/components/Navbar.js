@@ -6,18 +6,20 @@ import api from './api';
 
 const NavBar = () => {
     const { state, actions } = useContext(UserContext);
-    console.log(state.name);
     let history = useHistory();
     const myUrl = '/logout';
 
     const logMeOut = async () => {
         try {
-            await api.get(myUrl);
             actions({
                 type: 'setState',
-                payload: false
-            })
+                payload: {
+                    name: '',
+                    loaded: false
+                }
+            });
             history.push('/');
+            await api.get(myUrl);
         }
         catch(error) {
             console.log(error);
@@ -26,7 +28,7 @@ const NavBar = () => {
 
     return ( 
         <nav>
-            <h1><Link to='/'>Mr. Fluffy Fluffs</Link></h1>
+            <h1><Link to='/' className='title'>Mr. Fluffy Fluffs</Link></h1>
             <ul>
                 {state.loaded ? <>
                     <li>Welcome, {state.name}</li>

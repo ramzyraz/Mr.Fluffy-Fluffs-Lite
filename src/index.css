@@ -5,13 +5,16 @@
   margin: 20px 40px;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  background: #fafafa;
+  /* background: #fafafa; */
 }
 h1, h2, h3, h4, ul, li, a, p, input, label, button, div, footer{
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
   color: #444;
+}
+.title{
+  padding-left: 2vh;
 }
 ul{
   list-style-type: none;
@@ -23,7 +26,7 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 120px;
+  margin-bottom: 110px;
 }
 nav ul{
   display: flex;
@@ -138,6 +141,13 @@ button{
 .single img{
   width: 140px;
   margin: -30px auto 20px;
+}
+.single h2.name{
+  padding-bottom: 2vh;
+}
+.single p.des{
+  padding-bottom: 1vh;
+  font-weight: 550;
 }
 footer{
   text-align: center;

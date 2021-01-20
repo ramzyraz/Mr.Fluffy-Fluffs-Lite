@@ -8,10 +8,8 @@ const useGlobalState = () => {
 
     const actions = (action) => {
         switch (action.type) {
-            case 'setName':
-                return setState({ ...state, name: action.payload })
             case 'setState':
-                return setState({ ...state, loaded: action.payload })
+                return setState({ ...state, name: action.payload.name, loaded: action.payload.loaded })
             default:
                 return state;
         }

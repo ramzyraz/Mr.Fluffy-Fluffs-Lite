@@ -2,7 +2,6 @@ import FluffyPancake from '../assets/fluffyPancake.jpg';
 import useFetch from './useFetch';
 
 const Recipes = () => {
-
     const {data, isLoading, error} = useFetch('/recipes');
 
     return ( 
@@ -10,14 +9,16 @@ const Recipes = () => {
         <ul className="collection">
             {error && <div>{error}</div>}
             {isLoading && <div>Loading...</div>}
-            {data.map(recipe => (
-                <div key={recipe._id} className="single">
-                    <img src={FluffyPancake} alt="fluffy pancake" />
-                    <h2>{ recipe.name }</h2>
-                    <p>{ recipe.description }</p>
-                    <p>{ recipe.price }</p>
-                </div>
-            ))}
+            {data ? 
+                data.map(recipe => (
+                    <div key={recipe._id} className="single">
+                        <img src={FluffyPancake} alt="fluffy pancake" />
+                        <h2 className='name'>{ recipe.name }</h2>
+                        <p className='des'>{ recipe.description }</p>
+                        <p className='price'>RS { recipe.price }</p>
+                    </div>
+                ))
+            : <div>PLEASE LOGIN FIRST TO SEE THE MENU</div>}
         </ul>
         </>
      );
