@@ -1,8 +1,10 @@
-import { useState } from  'react';
+import { useState, useContext } from  'react';
 import api from './api';
 import { useHistory } from "react-router-dom";
+import UserContext from '../store/UserContext';
 
 const Login = () => {
+    const loginDataAccessor = useContext(UserContext);
     let history = useHistory();
     const [userLogin, setUserLogin] = useState({
         email: "",
@@ -21,6 +23,11 @@ const Login = () => {
         e.preventDefault();
         try {
             const result = await api.post('/login', userLogin);
+            console.log(result.data.user);
+            loginDataAccessor.actions({
+                type: 'setState',
+                payload: true
+            })
             history.push('/');
         }
         catch(err) {
