@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
 const UserSchema = require('../model/user');
 
-// UTILIY FUNCTIONS
-// handle errors
+// ERROR HANDLING
 const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: '', password: '' };
@@ -70,7 +69,7 @@ module.exports.loginUser = async (req, res) => {
     const user = await UserSchema.login(email, password);
     const token = createToken(user._id);
     res.cookie('usercookie', token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(200).json({ user: user._id });
+    res.status(200).json({ user: user });
   }
   catch (err) {
     const errors = handleErrors(err);
@@ -81,6 +80,5 @@ module.exports.loginUser = async (req, res) => {
 module.exports.logOut = (req, res) => {
   res.cookie('usercookie', '', { maxAge: 1 });
   res.clearCookie('usercookie');
-  res.send('');
   res.redirect('/login');
 }
