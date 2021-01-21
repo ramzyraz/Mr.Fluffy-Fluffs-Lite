@@ -1,4 +1,3 @@
-import FluffyPancake from '../assets/fluffyPancake.jpg';
 import useFetch from './useFetch';
 
 const Recipes = () => {
@@ -12,7 +11,7 @@ const Recipes = () => {
             {data ? 
                 data.map(recipe => (
                     <div key={recipe._id} className="single">
-                        <img src={FluffyPancake} alt="fluffy pancake" />
+                        <img src={recipe.image} alt="Pancake Images" />
                         <h2 className='name'>{ recipe.name }</h2>
                         <p className='des'>{ recipe.description }</p>
                         <p className='price'>RS { recipe.price }</p>
