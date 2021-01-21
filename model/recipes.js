@@ -5,7 +5,8 @@ const RecipeSchema = new schema({
     _id: schema.Types.ObjectId,
     name: String,
     description: String,
-    price: Number
+    price: Number,
+    image: String,
 });
 
 module.exports = mongoose.model('recipes', RecipeSchema);

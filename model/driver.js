@@ -1,29 +1,31 @@
-const mongoose = require('mongoose');
 const RecipeSchema = require('./recipes');
 
-// app.get("/saveData", 
 const InsertRecipes = async (req,res,next) => {
     try {
       const data = [
         {
             name: 'Fluffy Pancake',
             description: 'Your classic fluffy pancake',
-            price: 100
+            price: 100,
+            image: '/images/fluffyPancake.jpg',
         },
         {
             name: 'Nutella Pancake',
             description: 'Fluffy pancakes filled with thick layer of creamy Nutella',
-            price: 170
+            price: 170,
+            image: '/images/nutellaPancake.jpg',
         },  
         {
             name: 'Chocholate Chip Pancake',
             description: 'Ultra fluffy amd filled with chocolate chips',
-            price: 120
+            price: 120,
+            image: '/images/chocchipPancake.jpg',
         },
         {
             name: 'White Chocolate Chip Pancake',
             description: 'The white chocolate chips take them to the next level',
-            price: 120
+            price: 120,
+            image: '/images/ww.jpg',
         }
       ];
       let saveBlog = await RecipeSchema.insertMany(data); //when fail its goes to catch
