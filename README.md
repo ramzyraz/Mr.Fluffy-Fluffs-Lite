@@ -1,19 +1,16 @@
 # Mr.Fluffy-Fluffs-Lite
-MERN Stack Web Application for the startup: Mr. Fluffy Fluffs
-
-# Description
 Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance between quality and cheapness alongside enhancing user experience by providing user friendly interface, interactive menus, and pictorial representations of the food being ordered.
 
 This project uses the following technologies:
 
-1. React and React Router for frontend
-2. Express and Node for the backend
-3. MongoDB for the database
+1. <b>React</b> and <b>React Router</b> for Frontend
+2. <b>Express</b> and <b>Node</b> for the Backend
+3. </b>MongoDB</b> for the Database
 4. React Hooks and Context API for state management between React Components
 
 # Features
 * Login and Registeration System
-* Fetching Data from API to get MENU
+* Fetching Data from API to get MENU Items
 
 # Features Under Development
 * Full featured shopping cart
@@ -38,7 +35,7 @@ Run the main server. It listens on port 5000.
 
 > npm run dev
 
-If you want to configure the front-end, go to client branch using the git command.
+If you want to configure the front-end, go to the client branch using the git command.
 
 > git checkout client
 
