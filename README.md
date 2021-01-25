@@ -14,6 +14,7 @@ This project uses the following technologies:
 # Features
 * Login and Registeration System
 * Fetching Data from API to get MENU Items
+* LogOut System
 
 # Features Under Development
 * Full featured shopping cart
