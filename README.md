@@ -1,11 +1,9 @@
 # Mr.Fluffy-Fluffs-Lite
 Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance between quality and cheapness alongside enhancing user experience by providing user friendly interface, interactive menus, and pictorial representations of the food being ordered.
 
-![Imgur Image](https://imgur.com/Jfvg0L5.png)
-<br/>
-![Imgur Image](https://imgur.com/XjhV1PO.png)
-<br/>
-![Imgur Image](https://imgur.com/F9oZQak.png)
+![Imgur Image](https://imgur.com/Jfvg0L5.png){: height="150px" width="300px" margin-bottom:"5px" }
+![Imgur Image](https://imgur.com/XjhV1PO.png){: height="150px" width="300px" margin-bottom:"5px" }
+![Imgur Image](https://imgur.com/F9oZQak.png){: height="150px" width="300px" }
 
 This project uses the following technologies:
   1. <b>React</b> and <b>React Router</b> for Frontend
