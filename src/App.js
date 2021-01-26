@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Login from './components/login';
 import Register from './components/register';
 import Recipes from './components/Recipes';
+import SideBar from './components/Sidebar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/logout" component={Login} />
           <Route path='/signup' component={Register} />
           <Route path='/recipes' component={Recipes} />
+          <Route path='/sidebar' component={SideBar} />
         </Switch>
         <Footer />
       </div>

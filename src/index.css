@@ -31,6 +31,7 @@ nav{
 nav ul{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 nav li{
   margin-left: 20px;
@@ -49,6 +50,9 @@ nav li{
 }
 .set.point {
   cursor: pointer;
+}
+.cart-img{
+  width: 6%;
 }
 header{
   display: flex;
@@ -131,23 +135,140 @@ button{
   max-width: 1200px;
 }
 .single{
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background: white;
   position: relative;
   text-align: center;
+  height: 54vh;
   padding: 0 20px 30px 20px
 }
+.single:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 .single img{
-  width: 140px;
+  width: 20vh;
   margin: -30px auto 20px;
 }
+.single.tops {
+  float: right;
+}
 .single h2.name{
-  padding-bottom: 2vh;
+  font-size: 4.5vh;
+  padding-bottom: 1vh;
 }
 .single p.des{
-  padding-bottom: 1vh;
-  font-weight: 550;
+  padding-bottom: 0.5vh;
+  font-weight: 390;
+}
+.single p.price{
+  margin-top: 1.8vh;
+}
+.sidebar-container{
+  display: flex;
+  height: 112vh;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fef1bd;
+  padding-left: 2vh;
+  padding-top: 2.5vh;
+  padding-right: 2vh;
+  padding-bottom: 0.2vh;
+  border-radius: 20px;
+}
+.outerset{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.innerset{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.innerset img{
+  width: 30vh;
+  margin: -30px auto 20px;
+}
+.innerset h2.name{
+  position: relative;
+  left: 40vw;
+  top: -40vh;
+}
+.innerset p.des{
+  position: relative;
+  left: 40vw;
+  top: -38vh;
+}
+.innerset p.price{
+  position: relative;
+  left: 40vw;
+  top: -33vh;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.toppings-container{
+  position: relative;
+  top: -15vh;
+}
+.toppings-container h3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toppings-container h5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toppings-container h5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toppings-inside{
+  position: relative;
+  left: 20vw;
+}
+.toppings-inside label{
+  padding-left: 5vh;
+}
+.toppings{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding-left: 6vh;
+  margin-bottom: 4vh;
+}
+.topprice{
+  position: relative;
+  right: 20vw;
+}
+.toppings label {  
+  margin: 0;
+}
+.toppings input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4vh;
+  width: 3.2vh;
+  cursor: pointer;
+}
+.toppings h4{
+  margin: 2vh;
+}
+.cart-btn{
+  margin: 4vh auto;
+  display: block;
+  background-color: #ffac38;
+}
+.mybtns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer{
   text-align: center;

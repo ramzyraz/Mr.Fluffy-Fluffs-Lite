@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import UserContext from '../store/UserContext';
+import Carts from '../assets/carts.svg';
 import api from './api';
 
 const NavBar = () => {
@@ -32,7 +33,8 @@ const NavBar = () => {
             <ul>
                 {state.loaded ? <>
                     <li>Welcome, {state.name}</li>
-                    <li className='set point' onClick={logMeOut}>Log Out</li> 
+                    <li className='set point' onClick={logMeOut}>Log Out</li>
+                    <img src={Carts} alt='Shopping Cart' className='cart-img'/> 
                 </> :
                 <>
                     <li><Link to="/login" className='set'>Log In</Link></li>
