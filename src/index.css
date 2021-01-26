@@ -261,6 +261,9 @@ button{
   margin: 2vh;
 }
 .cart-btn{
+  cursor: pointer;
+  outline: none !important;
+  box-shadow: none !important;
   margin: 4vh auto;
   display: block;
   background-color: #ffac38;

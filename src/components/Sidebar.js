@@ -1,33 +1,13 @@
 import { useHistory, useLocation } from "react-router-dom";
+import useFetch from './useFetch';
 
 const SideBar = () => {
+    const {data, isLoading, error} = useFetch('/toppings');
     const location = useLocation();
     const history = useHistory();
     const goBack = () => {
         history.push('/recipes');
     }
-    const data = [
-        {
-            name: 'Nutella',
-            price: 20
-        },
-        {
-            name: 'Maple Syrup',
-            price: 20
-        },
-        {
-            name: 'Creame',
-            price: 20
-        },
-        {
-            name: 'Chocolate Chips',
-            price: 30
-        },
-        {
-            name: 'White Chocolate Chips',
-            price: 30
-        },
-    ]
     return ( 
         <div className='sidebar-container'>
             <div className="outerset">
@@ -40,7 +20,9 @@ const SideBar = () => {
             </div>
             <div className='toppings-container'>
                 <h3>Extra Toppings</h3>
-                <h5>Select upto any 4</h5>
+                <h5>Select upto any 3</h5>
+                {error && <div>{error}</div>}
+                {isLoading && <div>Loading...</div>}
                 {data ? 
                     data.map(topping => (
                         <div key={topping.name} className='toppings'>
