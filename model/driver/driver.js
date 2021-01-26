@@ -1,4 +1,4 @@
-const RecipeSchema = require('./recipes');
+const RecipeSchema = require('../recipes');
 
 const InsertRecipes = async (req,res,next) => {
     try {
