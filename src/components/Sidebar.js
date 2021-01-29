@@ -1,13 +1,53 @@
+import { useState } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/food/food_actions';
 import useFetch from './useFetch';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox'
 
 const SideBar = () => {
     const {data, isLoading, error} = useFetch('/toppings');
+    const [checked, setChecked] = useState([]);
+    const [toppingName, setToppingName] = useState([]);
+    const [toppingPrice, setToppingPrice] = useState([]);
+    const dispatch = useDispatch();
     const location = useLocation();
     const history = useHistory();
     const goBack = () => {
         history.push('/recipes');
-    }
+    };
+    const handleCheck = (event, value, price) => {
+        const isSelected = event.target.checked;
+        setChecked(checked.includes(value) ? checked.filter(c => c !== value) : [...checked, value]);
+        if (isSelected) {
+            setToppingName([
+                ...toppingName,
+                value
+            ]);
+
+            setToppingPrice([
+                ...toppingPrice,
+                price
+            ]);
+        }
+    };
+    const AddToCart = (name, price) => {
+        console.log(name, price);
+        dispatch(addToCart({
+            pancakes: {
+                name,
+                price,
+                quantity: 1   
+            },
+            toppings: {
+                name: toppingName,
+                price: toppingPrice
+            }
+        }));
+    };
     return ( 
         <div className='sidebar-container'>
             <div className="outerset">
@@ -27,8 +67,17 @@ const SideBar = () => {
                     data.map(topping => (
                         <div key={topping.name} className='toppings'>
                             <div className='toppings-inside'>
-                                <input type="radio" name={topping.name} />
-                                <label htmlFor={topping.name}>{ topping.name }</label>
+                                <FormControl required component="fieldset">
+                                    <FormGroup>
+                                        <FormControlLabel
+                                            control={<Checkbox 
+                                                onChange={(e) => handleCheck(e, topping.name, topping.price)} 
+                                                checked={checked.includes(topping.name)} 
+                                            />}
+                                            label={topping.name}
+                                        />
+                                    </FormGroup>
+                                </FormControl>
                             </div>
                             <p className='topprice'>RS { topping.price }</p>
                         </div>
@@ -36,7 +85,7 @@ const SideBar = () => {
                     : <div>PLEASE WAIT! DATA IS LOADING</div>}
                     <div className='mybtns'>
                         <button className='cart-btn' onClick={goBack}>GO Back To Menu</button>
-                        <button className='cart-btn'>Add to Cart</button>
+                        <button className='cart-btn' onClick={() => AddToCart(location.recipes.name, location.recipes.price)}>Add to Cart</button>
                     </div>
                 </div>
         </div>

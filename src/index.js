@@ -3,21 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import useGlobalState from './store/useGlobalState';
-import UserContext from './store/UserContext';
-
-const Index = () => {
-  const store = useGlobalState(); 
-  return (
-    <UserContext.Provider value={store}>
-      <App />
-    </UserContext.Provider>
-  )
-}
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Index />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

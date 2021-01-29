@@ -1,10 +1,11 @@
 import api from './api';
-import { useState, useContext } from  'react';
+import { useState } from  'react';
 import { useHistory } from "react-router-dom";
-import UserContext from '../store/UserContext';
+import { useDispatch  } from 'react-redux';
+import { logActions } from '../redux/ui/ui_actions';
 
 const Login = () => {
-    const loginDataAccessor = useContext(UserContext);
+    const dispatch = useDispatch();
     let history = useHistory();
     const [userLogin, setUserLogin] = useState({
         email: "",
@@ -23,14 +24,10 @@ const Login = () => {
         e.preventDefault();
         try {
             const result = await api.post('/login', userLogin);
-            console.log(result.data.user.name);
-            loginDataAccessor.actions({
-                type: 'setState',
-                payload: {
-                    loaded: true,
-                    name: result.data.user.name,
-                }
-            });
+            dispatch(logActions({
+                name: result.data.user.name,
+                loaded: true,
+            }));
             history.push('/');
         }
         catch(err) {
