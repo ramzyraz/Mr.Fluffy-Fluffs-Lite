@@ -9,16 +9,16 @@ This project uses the following technologies:
   1. <b>React</b> and <b>React Router</b> for Frontend
   2. <b>Express</b> and <b>Node</b> for the Backend
   3. <b>MongoDB</b> for the Database
-  4. React Hooks and Context API for state management between React Components
+  4. React Hooks and Redux for state management between React Components (Previously Context API was being used instead of Redux)
 
 # Features
 * Login and Registeration System
 * Fetching Data from API to get MENU Items
 * Fetching Data from API to get Toppings
 * LogOut System
+* Full featured shopping cart
 
 # Features Under Development
-* Full featured shopping cart
 * Checkout process (shipping, payment method, etc)
 * User profile with orders
 * Product reviews and ratings
