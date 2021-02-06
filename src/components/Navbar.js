@@ -8,8 +8,8 @@ import { logActions } from '../redux/ui/ui_actions';
 const NavBar = () => {
     const name = useSelector((store) => store.ui.info.name);
     const loaded = useSelector((store) => store.ui.info.loaded);
+    const items = useSelector((store) => store.food.items);
     const dispatch = useDispatch();
-    const count = 1;
     let history = useHistory();
     const myUrl = '/logout';
 
@@ -36,7 +36,7 @@ const NavBar = () => {
                     <li className='set point' onClick={logMeOut}>Log Out</li>
                     <Link to='/cart' className='cart-img'>
                         <img src={Carts} alt='Shopping Cart' /> 
-                        <p className="cart-counter">{ count }</p>
+                        <p className="cart-counter">{ items.length }</p>
                     </Link>
                 </> :
                 <>

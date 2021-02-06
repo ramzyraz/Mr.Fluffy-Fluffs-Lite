@@ -2,7 +2,17 @@ import * as foodTypes from './food_types';
 
 const INITIAL_STATE = {
     items: [],
-    currentItem: null
+}
+
+const checkToppings = (a, b) => {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;
+  
+    for (let i = 0; i < a.length; ++i) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
 }
 
 const foodReducer = (state = INITIAL_STATE, action) => {
@@ -13,14 +23,13 @@ const foodReducer = (state = INITIAL_STATE, action) => {
                 items: [...state.items, action.payload]
             };
         case foodTypes.REMOVE_FROM_CART:
+            const findPancake = (item) => {
+                return item.pancakes.name !== action.payload.pancakes.name ? true : false
+            }
             return {
                 ...state,
-                items: state.items.filter((item) => item.pancakes.name !== action.payload)
+                items: state.items.filter((item) => (findPancake(item) && !(checkToppings(item.toppings.name, action.payload.toppings.name))))
             };
-        case foodTypes.ADJUST_ITEM_QTY:
-            return [];
-        case foodTypes.LOAD_CURRENT_ITEM:
-            return [];
         default:
             return state;
     }

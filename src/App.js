@@ -6,6 +6,7 @@ import Register from './components/register';
 import Recipes from './components/Recipes';
 import Cart from './components/Cart';
 import SideBar from './components/Sidebar';
+import Checkout from './components/Checkout';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/signup' component={Register} />
           <Route path='/recipes' component={Recipes} />
           <Route path='/cart' component={Cart} />
+          <Route path='/checkout' component={Checkout} />
           <Route path='/sidebar' component={SideBar} />
         </Switch>
         <Footer />

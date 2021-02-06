@@ -7,26 +7,9 @@ export const addToCart = (items) => {
     };
 }
 
-export const removeFromCart = (pancake) => {
+export const removeFromCart = (pancakeItem) => {
     return {
         type: foodTypes.REMOVE_FROM_CART,
-        payload: pancake
+        payload: pancakeItem
     };
 }
-
-export const adjustItemQty = (itemID, qty) => {
-    return {
-      type: foodTypes.ADJUST_ITEM_QTY,
-      payload: {
-        id: itemID,
-        qty,
-      },
-    };
-};
-  
-export const loadCurrentItem = (item) => {
-    return {
-      type: foodTypes.LOAD_CURRENT_ITEM,
-      payload: item,
-    };
-};

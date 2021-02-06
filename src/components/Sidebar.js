@@ -34,13 +34,12 @@ const SideBar = () => {
             ]);
         }
     };
-    const AddToCart = (name, price) => {
-        console.log(name, price);
+    const AddToCart = (img, name, price) => {
         dispatch(addToCart({
             pancakes: {
+                img,
                 name,
                 price,
-                quantity: 1   
             },
             toppings: {
                 name: toppingName,
@@ -66,8 +65,8 @@ const SideBar = () => {
                 {data ? 
                     data.map(topping => (
                         <div key={topping.name} className='toppings'>
-                            <div className='toppings-inside'>
-                                <FormControl required component="fieldset">
+                            {/* <div className='toppings-inside'> */}
+                                <FormControl required component="fieldset" className='toppings-inside'>
                                     <FormGroup>
                                         <FormControlLabel
                                             control={<Checkbox 
@@ -78,14 +77,14 @@ const SideBar = () => {
                                         />
                                     </FormGroup>
                                 </FormControl>
-                            </div>
+                            {/* </div> */}
                             <p className='topprice'>RS { topping.price }</p>
                         </div>
                     )) 
                     : <div>PLEASE WAIT! DATA IS LOADING</div>}
                     <div className='mybtns'>
                         <button className='cart-btn' onClick={goBack}>GO Back To Menu</button>
-                        <button className='cart-btn' onClick={() => AddToCart(location.recipes.name, location.recipes.price)}>Add to Cart</button>
+                        <button className='cart-btn' onClick={() => AddToCart(location.recipes.image, location.recipes.name, location.recipes.price)}>Add to Cart</button>
                     </div>
                 </div>
         </div>
