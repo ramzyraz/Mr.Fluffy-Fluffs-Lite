@@ -18,9 +18,9 @@ This project uses the following technologies:
 * Fetching Data from API to get Toppings
 * LogOut System
 * Full featured shopping cart
+* Checkout process (shipping, payment method, etc)
 
 # Features Under Development
-* Checkout process (shipping, payment method, etc)
 * User profile with orders
 * Product reviews and ratings
 
