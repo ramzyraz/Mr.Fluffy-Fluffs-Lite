@@ -5,6 +5,8 @@ Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance
 <img src="https://imgur.com/ftkRSbz.png" width="700">
 <img src="https://imgur.com/dLALDBo.png" width="700">
 <img src="https://imgur.com/LHZYTy1.png" width="700">
+<img src="https://imgur.com/fEy1H0W.png" width="700">
+<img src="https://imgur.com/RYkwZF2.png" width="700">
 
 This project uses the following technologies:
   1. <b>React</b> and <b>React Router</b> for Frontend
