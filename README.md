@@ -2,23 +2,27 @@
 Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance between quality and cheapness alongside enhancing user experience by providing user friendly interface, interactive menus, and pictorial representations of the food being ordered.
 
 <img src="https://imgur.com/Jfvg0L5.png" width="700">
-<img src="https://imgur.com/XjhV1PO.png" width="700">
-<img src="https://imgur.com/F9oZQak.png" width="700">
+<img src="https://imgur.com/ftkRSbz.png" width="700">
+<img src="https://imgur.com/dLALDBo.png" width="700">
+<img src="https://imgur.com/LHZYTy1.png" width="700">
+<img src="https://imgur.com/fEy1H0W.png" width="700">
+<img src="https://imgur.com/RYkwZF2.png" width="700">
 
 This project uses the following technologies:
   1. <b>React</b> and <b>React Router</b> for Frontend
   2. <b>Express</b> and <b>Node</b> for the Backend
   3. <b>MongoDB</b> for the Database
-  4. React Hooks and Context API for state management between React Components
+  4. React Hooks and Redux for state management between React Components (Previously Context API was being used instead of Redux)
 
 # Features
 * Login and Registeration System
 * Fetching Data from API to get MENU Items
+* Fetching Data from API to get Toppings
 * LogOut System
-
-# Features Under Development
 * Full featured shopping cart
 * Checkout process (shipping, payment method, etc)
+
+# Features Under Development
 * User profile with orders
 * Product reviews and ratings
 
