@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Carts from '../assets/carts.svg';
 import api from './api';
-import { logActions } from '../redux/ui/ui_actions';
+// import { logActions } from '../redux/ui/ui_actions';
 
 const NavBar = () => {
     const name = useSelector((store) => store.ui.info.name);
@@ -15,11 +15,9 @@ const NavBar = () => {
 
     const logMeOut = async () => {
         try {
-            dispatch(logActions({
-                name: '',
-                email: '',
-                loaded: false,
-            }));
+            dispatch({
+                type: 'USER_LOGOUT', 
+            });
             history.push('/');
             await api.get(myUrl);
         }
