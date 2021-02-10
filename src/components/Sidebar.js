@@ -37,9 +37,9 @@ const SideBar = () => {
     const AddToCart = (img, name, price) => {
         dispatch(addToCart({
             pancakes: {
-                img,
                 name,
                 price,
+                img,
             },
             toppings: {
                 name: toppingName,

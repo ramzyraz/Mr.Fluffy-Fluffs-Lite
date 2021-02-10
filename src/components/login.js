@@ -26,6 +26,7 @@ const Login = () => {
             const result = await api.post('/login', userLogin);
             dispatch(logActions({
                 name: result.data.user.name,
+                email: result.data.user.email,
                 loaded: true,
             }));
             history.push('/');

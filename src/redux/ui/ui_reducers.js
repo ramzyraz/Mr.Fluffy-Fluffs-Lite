@@ -2,6 +2,7 @@
 const initialState = {
     info: {
         name: '',
+        email: '',
         loaded: false,    
     },
 }
@@ -13,7 +14,8 @@ const uiReducer = (state = initialState, action) => {
                 ...state,
                 info: {
                     ...state.info,
-                    name: action.payload.name, 
+                    name: action.payload.name,
+                    email: action.payload.email, 
                     loaded: action.payload.loaded,    
                 }
             };

@@ -17,6 +17,7 @@ const NavBar = () => {
         try {
             dispatch(logActions({
                 name: '',
+                email: '',
                 loaded: false,
             }));
             history.push('/');

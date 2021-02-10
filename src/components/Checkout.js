@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 const Checkout = () => {
     const name = useSelector((store) => store.ui.info.name);
+    const email = useSelector((store) => store.ui.info.email);
     const items = useSelector((store) => store.food.items);
     const [userCheckout, setUserCheckout] = useState({
         contact: "",
@@ -23,21 +24,26 @@ const Checkout = () => {
 
     const handleSubmit = async (e, tItems, tPrice) => {
         e.preventDefault();
-        // try {
-        //     await api.post('/orders', {
-        //         Total_Items: tItems,
-        //         Total_Price: tPrice,
-        //         Items: [{
-        //             pancakes: items.pancakes,
-        //             toppings: items.toppings
-        //         }],
-        //         Customer: name
-        //     });
-        //     history.push('/');
-        // }
-        // catch(err) {
-        //     console.log(err.message)
-        // }
+        try {
+            await api.post('/order', {
+                Total_Items: tItems,
+                Total_Price: tPrice,
+                Items: items,
+                Customer: {
+                    number: parseInt(userCheckout.contact, 10),
+                    address: userCheckout.address,
+                    name,
+                    email,
+                }
+            });
+            alert('Your Order has been placed. Now redirecting to Homepage...')
+            setTimeout(() => {
+                history.push('/');
+            }, 1000);
+        }
+        catch(err) {
+            console.log(err.message)
+        }
     } 
 
     return ( 

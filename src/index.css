@@ -293,6 +293,12 @@ footer{
   display: flex;
   justify-content: center;
 }
+.cart-title{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -3vh;
+}
 .cart-container{
   position: relative;
   left: -5vw;
