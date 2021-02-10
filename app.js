@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const myroutes = require('./routes/myroutes');
 const reciperoutes = require('./routes/reciperoutes');
 const topsroutes = require('./routes/toppings');
+const orderroutes = require('./routes/order');
 const app = express();
 
 // view engine
@@ -27,5 +28,6 @@ app.use(express.static(path.join(__dirname, "public")));
 // Initialized Routes
 app.use(reciperoutes);
 app.use(topsroutes);
+app.use(orderroutes);
 app.use(myroutes);
 app.listen(process.env.PORT || 5000, () => console.log("Server has Started"))
