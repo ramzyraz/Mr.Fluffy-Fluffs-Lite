@@ -3,6 +3,7 @@ Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance
 
 # Deployment 
 The Backend Server has been deployed using Heroku: https://fluffy-fluffs.herokuapp.com/
+
 The Frontend Server has been deployed using Netlify: https://mr-fluffy-fluffs.netlify.app/
 
 <img src="https://imgur.com/Jfvg0L5.png" width="700">
