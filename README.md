@@ -1,6 +1,10 @@
 # Mr.Fluffy-Fluffs-Lite
 Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance between quality and cheapness alongside enhancing user experience by providing user friendly interface, interactive menus, and pictorial representations of the food being ordered.
 
+# Deployment 
+The Backend Server has been deployed using Heroku: https://fluffy-fluffs.herokuapp.com/
+The Frontend Server has been deployed using Netlify: https://mr-fluffy-fluffs.netlify.app/
+
 <img src="https://imgur.com/Jfvg0L5.png" width="700">
 <img src="https://imgur.com/ftkRSbz.png" width="700">
 <img src="https://imgur.com/dLALDBo.png" width="700">
