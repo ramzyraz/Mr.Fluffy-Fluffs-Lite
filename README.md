@@ -6,7 +6,7 @@ The Backend Server has been deployed using Heroku: https://fluffy-fluffs.herokua
 
 The Frontend Server has been deployed using Netlify: https://mr-fluffy-fluffs.netlify.app/
 
-<b>NOTE:</b> After deployment, there seems be an issue in the creation of cookies and as a result, the login authentication isn't working smoothly. Hence that is being looked at. 
+<b>NOTE:</b> After deployment, there seems be an issue in the creation of cookies and as a result, the login authentication isn't working smoothly. The issue is currently being looked at and will be resolved soon. 
 
 <img src="https://imgur.com/Jfvg0L5.png" width="700">
 <img src="https://imgur.com/ftkRSbz.png" width="700">
