@@ -31,6 +31,7 @@ This project uses the following technologies:
 # Features Under Development
 * User profile with orders
 * Product reviews and ratings
+* Session Management (Currently only using JWT Cookies for Authentication)
 
 # Instructions
 Fork, then download or clone the repo.
