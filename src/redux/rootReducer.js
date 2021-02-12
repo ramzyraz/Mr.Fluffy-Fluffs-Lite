@@ -15,9 +15,4 @@ const rootReducer = (state, action) => {
     return appReducer(state, action)
   }
 
-// const rootReducer = combineReducers({
-//     ui: uiReducer,
-//     food: foodReducer,
-// });
-
 export default rootReducer;

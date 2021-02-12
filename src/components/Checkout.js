@@ -1,7 +1,7 @@
 import api from './api';
 import { useState } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Checkout = () => {
     const name = useSelector((store) => store.ui.info.name);
@@ -11,6 +11,7 @@ const Checkout = () => {
         contact: "",
         address: ""
     });
+    const dispatch = useDispatch();
     const location = useLocation();
     const history = useHistory();
 
@@ -35,6 +36,9 @@ const Checkout = () => {
                     name,
                     email,
                 }
+            });
+            dispatch({
+                type: 'ORDER_PLACED', 
             });
             alert('Your Order has been placed. Now redirecting to Homepage...')
             setTimeout(() => {

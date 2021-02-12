@@ -30,6 +30,8 @@ const foodReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 items: state.items.filter((item) => (findPancake(item) && !(checkToppings(item.toppings.name, action.payload.toppings.name))))
             };
+        case foodTypes.EMPTY_CART:
+                return INITIAL_STATE;
         default:
             return state;
     }
