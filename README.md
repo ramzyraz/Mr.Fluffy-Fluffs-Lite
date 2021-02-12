@@ -6,6 +6,7 @@ The Backend Server has been deployed using Heroku: https://fluffy-fluffs.herokua
 
 The Frontend Server has been deployed using Netlify: https://mr-fluffy-fluffs.netlify.app/
 
+
 <img src="https://imgur.com/Jfvg0L5.png" width="700">
 <img src="https://imgur.com/ftkRSbz.png" width="700">
 <img src="https://imgur.com/dLALDBo.png" width="700">
