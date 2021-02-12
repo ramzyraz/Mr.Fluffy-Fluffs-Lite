@@ -1,4 +1,3 @@
-require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require("morgan");
@@ -9,6 +8,7 @@ const myroutes = require('./routes/myroutes');
 const reciperoutes = require('./routes/reciperoutes');
 const topsroutes = require('./routes/toppings');
 const orderroutes = require('./routes/order');
+require('dotenv').config()
 const app = express();
 
 // view engine
