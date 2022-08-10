@@ -53,7 +53,7 @@ module.exports.registerUser = async (req, res) => {
   try {
     const user = await UserSchema.create({ name, email, password });
     const token = createToken(user._id);
-    res.cookie('usercookie', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.cookie('usercookie', token, { httpOnly: true, maxAge: maxAge * 1000, secure: true });
     res.status(201).json({ user: user._id });
   }
   catch(err) {
@@ -68,7 +68,7 @@ module.exports.loginUser = async (req, res) => {
   try {
     const user = await UserSchema.login(email, password);
     const token = createToken(user._id);
-    res.cookie('usercookie', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.cookie('usercookie', token, { httpOnly: true, maxAge: maxAge * 1000, secure: true });
     res.status(200).json({ user: user });
   }
   catch (err) {
