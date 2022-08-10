@@ -26,8 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Initialized Routes
+app.use(myroutes);
 app.use(reciperoutes);
 app.use(topsroutes);
 app.use(orderroutes);
-app.use(myroutes);
 app.listen(process.env.PORT || 5000, () => console.log("Server has Started"))
