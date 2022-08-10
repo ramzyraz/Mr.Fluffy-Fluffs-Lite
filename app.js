@@ -21,7 +21,7 @@ mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnified
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({credentials: true, origin: 'https://mr-fluffy-fluffs.netlify.app/'})); 
+app.use(cors({credentials: true, origin: '*'})); 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
