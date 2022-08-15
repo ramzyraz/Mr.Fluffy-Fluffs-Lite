@@ -43,7 +43,7 @@ const Login = () => {
             <input type="text" name="email" required onChange={handleChange} />
             <div className="email error"></div>
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" required onChange={handleChange} />
+            <input type="password" name="password" required onChange={handleChange} autoComplete="on"/>
             <div className="password error"></div>
             <button>LOGIN</button>
         </form>

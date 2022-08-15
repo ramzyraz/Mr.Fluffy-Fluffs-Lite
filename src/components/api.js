@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://fluffy-fluffs.herokuapp.com',
+    baseURL: 'http://localhost:5000',
     withCredentials: true,    
 });
 
