@@ -2,7 +2,7 @@
 Mr. Fluffy Fluffs is an online ordering system meant to achieve pristine balance between quality and cheapness alongside enhancing user experience by providing user friendly interface, interactive menus, and pictorial representations of the food being ordered.
 
 # Application
-The differnet pages of the Mr.Fluffy Fluffs application are show below: 
+The differnet pages of the Mr.Fluffy Fluffs application are shown below: 
 
 <img src="https://imgur.com/Jfvg0L5.png" width="700">
 <img src="https://imgur.com/ftkRSbz.png" width="700">
